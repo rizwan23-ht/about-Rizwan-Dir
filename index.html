@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Rizwan Ullah - Computer Science Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            border-radius: 2px;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff8a00, #da1b60);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 138, 0, 0.3);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 10px rgba(255, 138, 0, 0.3); }
+            to { text-shadow: 0 0 30px rgba(218, 27, 96, 0.7); }
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .info-card {
+            background: rgba(30, 30, 50, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(218, 27, 96, 0.5);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ff8a00;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #da1b60;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .info-value {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .quote-section {
+            background: rgba(30, 30, 50, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.05);
+            font-family: Georgia, serif;
+        }
+        
+        .quote {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quote-author {
+            color: #ff8a00;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff8a00, #da1b60);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .icon:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
+        
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .container {
+                padding: 25px;
+            }
+        }
+        
+        /* Animation classes */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+        
+        .delay-4 {
+            animation-delay: 0.8s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .muft-alif {
+            color: #ff8a00;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="title animate-in">THIS IS ME <br>Mr. Rizwan Ullah</h1>
+            <p class="subtitle animate-in delay-1">Computer Science Student | Future Software Engineer</p>
+        </div>
+        
+        <div class="content">
+            <div class="info-card animate-in delay-1">
+                <h2 class="card-title"><i>📚</i> Academic Information</h2>
+                <div class="info-item">
+                    <div class="info-label">Current Year</div>
+                    <div class="info-value">2nd Year (Graduation)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Field of Study</div>
+                    <div class="info-value">Computer Science</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">College</div>
+                    <div class="info-value">Concept Model College Wari Dir Upper</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Previous Education</div>
+                    <div class="info-value">Matriculation from GHSS Akhagram</div>
+                </div>
+            </div>
+            
+            <div class="info-card animate-in delay-2">
+                <h2 class="card-title"><i>🌟</i> Personal Details</h2>
+                <div class="info-item">
+                    <div class="info-label">Career Goal</div>
+                    <div class="info-value">To become a Software Engineer</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Current Class</div>
+                    <div class="info-value">First Year (Graduation)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">My Hope</div>
+                    <div class="info-value">To achieve excellence in software development</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">My Strength</div>
+                    <div class="info-value">Devotion to learning and growth</div>
+                </div>
+            </div>
+        </div>
+        <video src="InShot_20250621_221722208.mp4" width="300px" height="500px" controls></video>
+        <img src="Screenshot_20250622-204052.jpg" width="300px" height="500px" alt="">
+        
+        <div class="quote-section animate-in delay-3">
+            <p class="quote">
+                "I believe in the power of technology to transform lives. As a student of Computer Science, 
+                I'm dedicated to mastering the skills that will allow me to create innovative software solutions. 
+                My journey at Concept Model College is just the beginning. <span class="muft-alif">Muft Alif Ki Samvad</span> 
+                inspires me to think differently and pursue knowledge with passion."
+            </p>
+            <p class="quote-author">- Rizwan Ullah</p>
+        </div>
+        
+        <div class="footer animate-in delay-4">
+            <p>Designed with HTML, CSS & JavaScript | © 2025 Rizwan Ullah</p>
+            <div class="icons-container">
+                <div class="icon">💻</div>
+                <div class="icon">📱</div>
+                <div class="icon">🚀</div>
+                <div class="icon">🌟</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any JavaScript functionality you might need
+            console.log('Page loaded successfully!');
+            
+            // Example: Add a click effect to the title
+            const title = document.querySelector('.title');
+            title.addEventListener('click', function() {
+                this.style.animation = 'titleGlow 1s ease-in-out';
+                setTimeout(() => {
+                    this.style.animation = 'titleGlow 3s ease-in-out infinite alternate';
+                }, 1000);
+            });
+            
+            // Add a fun effect to cards when hovered
+            const cards = document.querySelectorAll('.info-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+   
+
+</body> 
+</html>
